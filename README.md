@@ -36,8 +36,6 @@ This project implements a robust ETL pipeline that ingests credit card data from
 
 1. **Extraction**: Load raw data from Oracle and flat files.
    - Credit Cards Extraction
-# ![CREDIT_CARD](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/CREDIT_CARD.png)
-
 3. **Transformation**:
    - Mask sensitive credit card numbers (`CC_NUMBER_MASKED`)
    - Join customer, employee, department data
