@@ -38,19 +38,30 @@ This project implements a robust ETL pipeline that ingests credit card data from
    - Credit Cards Extraction
    # ![CREDIT_CARD](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/CREDIT_CARD.png)
 
-3. **Transformation**:
+2. **Transformation**:
    - Mask sensitive credit card numbers (`CC_NUMBER_MASKED`)
    - Join customer, employee, department data
    - Assign incremental surrogate keys (`CC_SUR`)
-4. **Validation**:
+   # ![CREDIT_CARDS_MAPPING](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/CREDIT_CARDS_MAPPING.png)
+
+3. **Validation**:
    - Filter out invalid credit card numbers (≠ 16 digits)
    - Log rejected records to `REJECTED_DATA.csv`
-5. **Routing**:
+   # ![REJECTED_CREDIT_CARDS](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/REJECTED_CREDIT_CARDS.png)
+
+4. **Routing**:
    - Records before `$$date` → `CREDIT_CARDS_ARCHIVE`
    - Records on/after `$$date` → `CREDIT_CARDS_CURRENT`
-6. **Loading**: Append or update to flat file targets without truncation
+   # ![M_CC_ARCHIVING](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/M_CC_ARCHIVING.png)
 
-
+   - CREDIT_CARDS_CURRENT :
+   - # ![CURRENT_CREDIT_CARDS](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/CURRENT_CREDIT_CARDS.png)
+  
+   - CREDIT_CARDS_ARCHIVE :
+   - # ![ARCHIVED_CREDIT_CARDS.png](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/ARCHIVED_CREDIT_CARDS.png)
+      
+5. **Loading**: Append or update to flat file targets without truncation
+   # ![ALL_CREDIT_CARDS](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/ALL_CREDIT_CARDS.png)
 
 ---
 
@@ -62,6 +73,8 @@ This project implements a robust ETL pipeline that ingests credit card data from
 - 📁 **Archiving Logic**: Based on dynamic parameter `$$date`
 - 🔄 **Update Mode**: Smart inserts/updates (no truncation)
 - 📄 **Execution Gate**: Runs only when a `ready` file is detected (Event Wait)
+     # ![Parameter_File](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/Parameter_File.png)
+     # ![WF_CC_DWH](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/WF_CC_DWH.png)
 
 ---
 
