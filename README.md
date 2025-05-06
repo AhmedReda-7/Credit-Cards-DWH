@@ -55,10 +55,10 @@ This project implements a robust ETL pipeline that ingests credit card data from
    # ![M_CC_ARCHIVING](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/M_CC_ARCHIVING.png)
 
    - CREDIT_CARDS_CURRENT :
-   - # ![CURRENT_CREDIT_CARDS](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/CURRENT_CREDIT_CARDS.png)
+   # ![CURRENT_CREDIT_CARDS](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/CURRENT_CREDIT_CARDS.png)
   
    - CREDIT_CARDS_ARCHIVE :
-   - # ![ARCHIVED_CREDIT_CARDS.png](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/ARCHIVED_CREDIT_CARDS.png)
+   # ![ARCHIVED_CREDIT_CARDS.png](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/ARCHIVED_CREDIT_CARDS.png)
       
 5. **Loading**: Append or update to flat file targets without truncation
    # ![ALL_CREDIT_CARDS](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/ALL_CREDIT_CARDS.png)
@@ -73,8 +73,11 @@ This project implements a robust ETL pipeline that ingests credit card data from
 - 📁 **Archiving Logic**: Based on dynamic parameter `$$date`
 - 🔄 **Update Mode**: Smart inserts/updates (no truncation)
 - 📄 **Execution Gate**: Runs only when a `ready` file is detected (Event Wait)
+
+     - Parameters in parameter file
      # ![Parameter_File](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/Parameter_File.png)
-     # ![WF_CC_DWH](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/WF_CC_DWH.png)
+     - Workflow with event-wait file watcher
+     # ![WF_CC_ARCHIVING](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/WF_CC_ARCHIVING.png)
 
 ---
 
