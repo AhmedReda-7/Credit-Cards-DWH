@@ -17,7 +17,7 @@ This project implements a robust ETL pipeline that ingests credit card data from
 - **File Types**: Flat Files (.csv, .out)
 - **Languages/Concepts**: SQL, Parameterization, Data Masking, Surrogate Keys
 - **Execution Control**: Event Wait File (File Watcher)
-- **Output Formats**: Excel, CSV
+- **Output Formats**: Excel, CSV, Out
 
 ---
 
@@ -35,17 +35,22 @@ This project implements a robust ETL pipeline that ingests credit card data from
 ### ETL Process Steps
 
 1. **Extraction**: Load raw data from Oracle and flat files.
-2. **Transformation**:
+   - Credit Cards Extraction
+# ![CREDIT CARD](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/CREDIT CARD.png)
+
+3. **Transformation**:
    - Mask sensitive credit card numbers (`CC_NUMBER_MASKED`)
    - Join customer, employee, department data
    - Assign incremental surrogate keys (`CC_SUR`)
-3. **Validation**:
+4. **Validation**:
    - Filter out invalid credit card numbers (≠ 16 digits)
    - Log rejected records to `REJECTED_DATA.csv`
-4. **Routing**:
+5. **Routing**:
    - Records before `$$date` → `CREDIT_CARDS_ARCHIVE`
    - Records on/after `$$date` → `CREDIT_CARDS_CURRENT`
-5. **Loading**: Append or update to flat file targets without truncation
+6. **Loading**: Append or update to flat file targets without truncation
+
+
 
 ---
 
