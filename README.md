@@ -74,7 +74,7 @@ This project implements a robust ETL pipeline that ingests credit card data from
 - 🔄 **Update Mode**: Smart inserts/updates (no truncation)
 - 📄 **Execution Gate**: Runs only when a `ready` file is detected (Event Wait)
 
-     - Parameters in parameter file
+     - $$date parameter in the parameter file
      # ![Parameter_File](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/Parameter_File.png)
      - Workflow with event-wait file watcher
      # ![WF_CC_ARCHIVING](https://raw.githubusercontent.com/AhmedReda-7/Credit-Cards-DWH/main/WF_CC_ARCHIVING.png)
